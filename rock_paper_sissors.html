@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ 
+        let comp, reqs, player, playerChoice, palyAgain;
+        let req=confirm("Do you wish to play Rock,Paper,Sissors");
+        if(req)
+        {
+
+            console.log(confirm("Lets play the Game"));
+
+            playerChoice=prompt("Enter your choice 'Rock,Paper,Sissors'");
+            
+            if(playerChoice){
+            reqs=playerChoice.trim().toLowerCase();
+
+            let rand=Math.floor(Math.random()*3)+1;
+            (rand==1?comp="rock"
+            :rand==2?comp="paper"
+            :comp="sissors");  
+
+            console.log(comp);
+            player=reqs;
+
+            console.log(player);
+
+            result = (player == comp)?"Tie"
+            :(player == "sissors" && comp == "Rock") 
+            ?`COMPUTER: ${comp} \n PLAYER: ${player} \n COMPUTER WINS!!!`
+            :(player == "paper" && comp == "sissors") 
+            ?`COMPUTER: ${comp} \n PLAYER: ${player} \n COMPUTER WINS!!!`
+            :(player == "rock" && comp == "paper") 
+            ?`COMPUTER: ${comp} \n PLAYER: ${player} \n COMPUTER WINS!!!`
+            :`COMPUTER: ${comp} \n PLAYER: ${player} \n PLAYER WINS!!!`;
+            alert(result);
+
+            playAgain = confirm("Lets Play Again?");
+            if(playAgain)
+            {
+             playAgain?location.reload():"Ok, Thankyou  play next time";
+            }
+        }
+            else{
+                alert(playerChoice??"You may changed your mind , so good luck next time");
+            }
+            
+        }
+        else{
+            console.log(alert("Thank You ! Lets play next time"));
+        }
+        
+    </script>
+</body>
+</html>
